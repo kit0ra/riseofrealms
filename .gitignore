@@ -5,6 +5,8 @@
 .idea/
 *.iml
 *.class
+.vscode/
+
 
 # Fichiers système
 .DS_Store
