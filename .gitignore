@@ -1,0 +1,15 @@
+# Dossiers et fichiers générés par Maven
+/target/
+
+# Fichiers d'IDEs
+.idea/
+*.iml
+*.class
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Configurations spécifiques à l'environnement
+*.log
+*.settings/
