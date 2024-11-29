@@ -1,7 +1,7 @@
 package fr.univbordeaux.riseofrealms.building;
 
 public class EnergySaverDecorator extends BuildingDecorator {
-    private double energyReductionPercentage;
+    private final double energyReductionPercentage;
 
     public EnergySaverDecorator(Building decoratedBuilding, double energyReductionPercentage) {
         super(decoratedBuilding);

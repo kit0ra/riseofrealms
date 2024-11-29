@@ -1,7 +1,7 @@
-package fr.univbordeaux.riseofrealms.building;
+package fr.univbordeaux.riseofrealms.buildings;
 
 public class BuildingColorDecorator extends BuildingDecorator {
-    private String color;
+    private final String color;
 
     public BuildingColorDecorator(Building decoratedBuilding, String color) {
         super(decoratedBuilding);

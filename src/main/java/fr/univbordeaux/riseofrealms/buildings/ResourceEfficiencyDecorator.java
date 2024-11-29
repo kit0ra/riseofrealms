@@ -1,7 +1,7 @@
 package fr.univbordeaux.riseofrealms.building;
 
 public class ResourceEfficiencyDecorator extends BuildingDecorator {
-    private double efficiencyPercentage;
+    private final double efficiencyPercentage;
 
     public ResourceEfficiencyDecorator(Building decoratedBuilding, double efficiencyPercentage) {
         super(decoratedBuilding);

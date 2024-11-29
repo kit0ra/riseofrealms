@@ -1,7 +1,7 @@
 package fr.univbordeaux.riseofrealms.building;
 
 public class SpeedBoostDecorator extends BuildingDecorator {
-    private double speedMultiplier;
+    private final double speedMultiplier;
 
     public SpeedBoostDecorator(Building decoratedBuilding, double speedMultiplier) {
         super(decoratedBuilding);
