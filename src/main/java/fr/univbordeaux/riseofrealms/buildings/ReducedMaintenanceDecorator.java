@@ -1,4 +1,4 @@
-package fr.univbordeaux.riseofrealms.building;
+package fr.univbordeaux.riseofrealms.buildings;
 
 public class ReducedMaintenanceDecorator extends BuildingDecorator {
     public ReducedMaintenanceDecorator(Building decoratedBuilding) {
