@@ -1,6 +1,8 @@
 package fr.univbordeaux.riseofrealms;
 
+import fr.univbordeaux.riseofrealms.Interface.View.MainView;
 import fr.univbordeaux.riseofrealms.resources.ResourceManager;
+import javafx.application.Application;
 
 /**
  * Hello world!
@@ -25,5 +27,7 @@ public class App
         resourceManager.removeResource("wood", 5);
         System.out.println("Wood count after removal: " + resourceManager.getResourceCount("wood"));
 
+
+        Application.launch(MainView.class, args);
     }
 }
