@@ -1,4 +1,4 @@
-package fr.univbordeaux.riseofrealms.observer;
+package fr.univbordeaux.riseofrealms.core.observer;
 
 import java.util.ArrayList;
 import java.util.List;

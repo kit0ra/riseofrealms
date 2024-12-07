@@ -1,4 +1,4 @@
-package fr.univbordeaux.riseofrealms.person;
+package fr.univbordeaux.riseofrealms.people;
 
 public class SimplePersonFactory implements PersonFactory {
     @Override

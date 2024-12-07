@@ -7,7 +7,7 @@ public class Steel extends Resource {
 
     @Override
     public void produce() {
-        quantity += 1;  //ajouter 1 unité
+        produceAndNotify(1); // ajouter 1 unité
     }
 
 }

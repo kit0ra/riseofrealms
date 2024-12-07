@@ -1,6 +1,6 @@
-package fr.univbordeaux.riseofrealms.strategy;
+package fr.univbordeaux.riseofrealms.core.strategy;
 
-import fr.univbordeaux.riseofrealms.person.Person;
+import fr.univbordeaux.riseofrealms.people.Person;
 
 public class WorkBehavior implements Behavior {
     @Override

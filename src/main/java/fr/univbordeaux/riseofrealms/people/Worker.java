@@ -7,6 +7,18 @@ public class Worker extends Person {
 
     @Override
     public void performAction() {
-        System.out.println(name + " is working to produce resources.");
+        if (behavior != null) {
+            behavior.execute(this); // Exécute le comportement assigné via le Strategy Pattern
+        } else {
+            System.out.println(name + " has no defined behavior.");
+        }
+    }
+
+    @Override
+    public void update(String resource, int quantity) {
+        super.update(resource, quantity); // Appel du comportement générique
+        if ("Wood".equalsIgnoreCase(resource) && quantity < 5) {
+            System.out.println(name + " is struggling: Not enough Wood for production!");
+        }
     }
 }

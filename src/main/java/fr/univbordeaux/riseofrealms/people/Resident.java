@@ -1,19 +1,24 @@
-package fr.univbordeaux.riseofrealms.person;
+package fr.univbordeaux.riseofrealms.people;
 
-import fr.univbordeaux.riseofrealms.observer.Observer;
-
-public class Resident extends Person implements Observer {
+public class Resident extends Person {
     public Resident(String name, int age) {
         super(name, age);
     }
 
     @Override
     public void performAction() {
-        System.out.println(name + " is consuming resources.");
+        if (behavior != null) {
+            behavior.execute(this); // Exécute le comportement assigné via le Strategy Pattern
+        } else {
+            System.out.println(name + " has no defined behavior.");
+        }
     }
 
     @Override
     public void update(String resource, int quantity) {
-        System.out.println(name + " noticed that " + resource + " changed to " + quantity);
+        super.update(resource, quantity); // Appel du comportement générique
+        if ("Food".equalsIgnoreCase(resource) && quantity < 10) {
+            System.out.println(name + " is very worried: Food is critically low!");
+        }
     }
 }
