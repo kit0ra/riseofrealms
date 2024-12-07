@@ -7,7 +7,7 @@ public class Wood extends Resource {
 
     @Override
     public void produce() {
-        quantity += 3;  //ajouter 3 unités
+        produceAndNotify(3); // ajouter 3 unités
     }
 
 }

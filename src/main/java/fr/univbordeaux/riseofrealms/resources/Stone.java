@@ -7,6 +7,6 @@ public class Stone extends Resource {
 
     @Override
     public void produce() {
-        quantity += 2;  //ajouter 2 unités
+        produceAndNotify(2); // ajouter 2 unité
     }
 }

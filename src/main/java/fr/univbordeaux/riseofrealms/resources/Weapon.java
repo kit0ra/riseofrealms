@@ -1,8 +1,8 @@
 package fr.univbordeaux.riseofrealms.resources;
 
-public class Lumber extends Resource {
-    public Lumber(int quantity) {
-        super("Lumber", quantity);
+public class Weapon extends Resource {
+    public Weapon(int initialQuantity) {
+        super("Weapon", initialQuantity);
     }
 
     @Override
