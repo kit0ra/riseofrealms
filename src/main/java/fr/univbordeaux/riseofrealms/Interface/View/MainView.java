@@ -1,24 +1,33 @@
 package fr.univbordeaux.riseofrealms.Interface.View;
 
-import fr.univbordeaux.riseofrealms.resources.ResourceManager;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class MainView extends Application{
-    private ResourceManager resourceManager;
+import java.util.Map;
 
-    @Override
-    public void start(Stage primaryStage) {
-        StackPane root = new StackPane();
-        Label label = new Label("Welcome to Rise of Realms");
-        root.getChildren().add(label);
+public class MainView {
+    private final Stage primaryStage;
+    private ResourcePanel resourcePanel;
+
+    public MainView(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        this.resourcePanel = new ResourcePanel();
+    }
+
+    public void initialize() {
+        BorderPane root = new BorderPane();
+        root.setTop(resourcePanel);
 
         Scene scene = new Scene(root, 800, 600);
-        primaryStage.setTitle("Rise of Realms");
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Rise of Realms");
         primaryStage.show();
+    }
+
+    public ResourcePanel getResourcePanel() {
+        return resourcePanel;
     }
 }
