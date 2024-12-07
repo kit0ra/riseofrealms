@@ -6,6 +6,8 @@ public class SimplePersonFactory implements PersonFactory {
         return switch (type.toLowerCase()) {
             case "worker" -> new Worker(name, age);
             case "resident" -> new Resident(name, age);
+            case "merchant" -> new Merchant(name, age);
+            case "soldier" -> new Soldier(name, age);
             default -> throw new IllegalArgumentException("Unknown person type: " + type);
         };
     }

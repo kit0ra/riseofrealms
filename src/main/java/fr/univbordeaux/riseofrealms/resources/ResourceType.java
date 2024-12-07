@@ -9,7 +9,8 @@ public enum ResourceType {
     LUMBER(7),
     STEEL(20),
     TOOLS(3),
-    CEMENT(5);
+    CEMENT(5),
+    WEAPON(5);
 
     private final int threshold;
 
