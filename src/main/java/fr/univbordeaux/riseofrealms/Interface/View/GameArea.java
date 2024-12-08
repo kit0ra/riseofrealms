@@ -1,8 +1,6 @@
 package fr.univbordeaux.riseofrealms.Interface.View;
 
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.Border;
-import javafx.scene.paint.Color;
 
 public class GameArea extends ScrollPane {
     private final GameGrid gameGrid;

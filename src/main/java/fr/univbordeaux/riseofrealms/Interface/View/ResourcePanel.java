@@ -3,7 +3,6 @@ package fr.univbordeaux.riseofrealms.Interface.View;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 
