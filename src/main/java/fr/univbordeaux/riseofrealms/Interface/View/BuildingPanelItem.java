@@ -14,9 +14,10 @@ public class BuildingPanelItem extends VBox {
         buildingImageView.setFitHeight(100);
         buildingImageView.setPreserveRatio(true);
 
-        Text buildingNameText = new Text(buildingName);
+        Text buildingNameText = new Text(buildingName.toUpperCase());
         this.getChildren().addAll(buildingImageView, buildingNameText);
 
         this.setAlignment(javafx.geometry.Pos.CENTER);
+        this.setPrefHeight(150);
     }
 }
