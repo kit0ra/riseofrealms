@@ -8,17 +8,20 @@ public class MainView {
     private final Stage primaryStage;
     private final ResourcePanel resourcePanel;
     private final GameArea gameArea;
+    private final BuildingPanel buildingPanel;
 
     public MainView(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.resourcePanel = new ResourcePanel();
         this.gameArea = new GameArea();
+        this.buildingPanel = new BuildingPanel();
     }
 
     public void initialize() {
         BorderPane root = new BorderPane();
         root.setTop(resourcePanel);
         root.setCenter(gameArea);
+        root.setBottom(buildingPanel);
 
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);

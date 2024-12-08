@@ -5,7 +5,7 @@ import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
 
 public class GameArea extends ScrollPane {
-    private GameGrid gameGrid;
+    private final GameGrid gameGrid;
 
     public GameArea() {
         this.gameGrid = new GameGrid();

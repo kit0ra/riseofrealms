@@ -22,7 +22,7 @@ public class GameGrid extends GridPane {
             }
         }
     }
-
+    //todo PUT IT IN CONTROLLER
     private void handleTileHover(Rectangle tile) {
         tile.setFill(Color.LIGHTGREEN);
     }

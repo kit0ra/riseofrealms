@@ -12,7 +12,6 @@ import java.util.Map;
 public class ResourcePanel extends HBox {
     public ResourcePanel() {
         this.setSpacing(10);
-//        this.setBorder(Border.stroke(Paint.valueOf("#000000")));
         this.setBackground(Background.fill(Paint.valueOf("#b3d0ff")));
         this.setPadding(new Insets(5 ,0, 5, 5));
     }
