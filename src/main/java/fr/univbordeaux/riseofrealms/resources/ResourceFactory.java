@@ -12,7 +12,7 @@ public class ResourceFactory {
             case STEEL -> new Steel(quantity);
             case TOOLS -> new Tools(quantity);
             case CEMENT -> new Cement(quantity);
-            case WEAPON -> new Weapon(quantity); // Nouveau cas ajouté
+            case WEAPON -> new Weapon(quantity); // Support for new resources
         };
     }
 }
