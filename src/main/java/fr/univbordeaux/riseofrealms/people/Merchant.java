@@ -6,17 +6,18 @@ public class Merchant extends Person {
     }
 
     @Override
-    public void performAction() {
-        System.out.println(name + " is trading goods and generating income.");
-    }
-
-    @Override
     public void update(String resource, int quantity) {
+        // Call the generic notification logic
+        super.update(resource, quantity);
+
+        // Specific resource handling logic for merchants
         if ("Gold".equalsIgnoreCase(resource) && quantity < 10) {
             System.out.println(name + " is concerned: Gold reserves are low (" + quantity + ").");
-        } else {
-            System.out.println(name + " noticed a change in " + resource + ": " + quantity);
         }
     }
 
+    @Override
+    public String toString() {
+        return "Merchant: " + name + ", Age: " + age;
+    }
 }

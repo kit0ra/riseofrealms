@@ -6,11 +6,6 @@ public class Soldier extends Person {
     }
 
     @Override
-    public void performAction() {
-        System.out.println(name + " is defending the realm.");
-    }
-
-    @Override
     public void update(String resource, int quantity) {
         if ("Weapons".equalsIgnoreCase(resource) && quantity < 5) {
             System.out.println(name + " is worried: Weapon stock is critically low (" + quantity + ").");
@@ -19,4 +14,8 @@ public class Soldier extends Person {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Soldier: " + name + ", Age: " + age;
+    }
 }
