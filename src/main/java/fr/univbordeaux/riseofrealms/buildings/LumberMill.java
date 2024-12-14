@@ -2,7 +2,7 @@ package fr.univbordeaux.riseofrealms.buildings;
 
 public class LumberMill extends Building {
     public LumberMill() {
-        super("Lumber Mill", 15);
+        super("Lumber Mill", 15, "null"); //todo add image path
     }
 
     @Override

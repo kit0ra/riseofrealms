@@ -1,12 +1,15 @@
 package fr.univbordeaux.riseofrealms.Interface.View;
 
+import fr.univbordeaux.riseofrealms.Interface.Controller.GameController;
 import javafx.scene.control.ScrollPane;
 
 public class GameArea extends ScrollPane {
     private final GameGrid gameGrid;
+    private final GameController gameController;
 
-    public GameArea() {
-        this.gameGrid = new GameGrid();
+    public GameArea(GameController gameController) {
+        this.gameController = gameController;
+        this.gameGrid = new GameGrid(gameController);
 
         this.setContent(this.gameGrid);
 

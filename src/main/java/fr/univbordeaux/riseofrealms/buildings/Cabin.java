@@ -1,8 +1,8 @@
 package fr.univbordeaux.riseofrealms.buildings;
 
-public class Farm extends Building {
-    public Farm() {
-        super("Farm", 10, ""); // Nom et taille
+public class Cabin extends Building {
+    public Cabin() {
+        super("Cabin", 1, "/images/buildings/cabin.png"); // Nom et taille & image
     }
 
     @Override
@@ -12,6 +12,7 @@ public class Farm extends Building {
 
     @Override
     protected void produce() {
+        System.out.println("Producing wood...");
         System.out.println("Producing food...");
     }
 
