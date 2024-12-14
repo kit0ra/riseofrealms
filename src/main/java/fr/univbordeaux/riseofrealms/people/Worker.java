@@ -6,19 +6,18 @@ public class Worker extends Person {
     }
 
     @Override
-    public void performAction() {
-        if (behavior != null) {
-            behavior.execute(this); // Exécute le comportement assigné via le Strategy Pattern
-        } else {
-            System.out.println(name + " has no defined behavior.");
+    public void update(String resource, int quantity) {
+        // Call the generic notification logic
+        super.update(resource, quantity);
+
+        // Specific resource handling logic for workers
+        if ("Wood".equalsIgnoreCase(resource) && quantity < 5) {
+            System.out.println(name + " is struggling: Not enough Wood for production!");
         }
     }
 
     @Override
-    public void update(String resource, int quantity) {
-        super.update(resource, quantity); // Appel du comportement générique
-        if ("Wood".equalsIgnoreCase(resource) && quantity < 5) {
-            System.out.println(name + " is struggling: Not enough Wood for production!");
-        }
+    public String toString() {
+        return "Worker: " + name + ", Age: " + age;
     }
 }
