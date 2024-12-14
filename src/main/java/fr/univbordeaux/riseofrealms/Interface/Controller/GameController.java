@@ -2,8 +2,7 @@ package fr.univbordeaux.riseofrealms.Interface.Controller;
 
 import fr.univbordeaux.riseofrealms.Interface.View.MainView;
 import fr.univbordeaux.riseofrealms.Interface.View.ResourcePanel;
-import fr.univbordeaux.riseofrealms.resources.ResourceManager;
-
+import fr.univbordeaux.riseofrealms.manager.ResourceManager;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +31,8 @@ public class GameController {
     private void updateResourcePanel(ResourcePanel resourcePanel) {
         Map<String, Integer> resources = new HashMap<>();
 
-        for (String resource: new String[]{"food", "wood", "stone", "iron", "coal", "lumber", "steel", "tools", "cement"}) {
+        for (String resource : new String[] { "food", "wood", "stone", "iron", "coal", "lumber", "steel", "tools",
+                "cement" }) {
             resources.put(resource, resourceManager.getResourceCount(resource));
         }
 
