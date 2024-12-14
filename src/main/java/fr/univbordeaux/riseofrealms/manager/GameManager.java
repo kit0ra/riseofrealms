@@ -5,7 +5,6 @@ import java.util.Scanner;
 import fr.univbordeaux.riseofrealms.core.strategy.WorkBehavior;
 import fr.univbordeaux.riseofrealms.people.Person;
 import fr.univbordeaux.riseofrealms.people.Worker;
-import fr.univbordeaux.riseofrealms.resources.ResourceType;
 
 public class GameManager {
     private static GameManager instance;

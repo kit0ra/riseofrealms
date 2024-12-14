@@ -2,7 +2,6 @@ package fr.univbordeaux.riseofrealms.people;
 
 import fr.univbordeaux.riseofrealms.core.strategy.Behavior;
 import fr.univbordeaux.riseofrealms.manager.ResourceManager;
-import fr.univbordeaux.riseofrealms.resources.ResourceType;
 import fr.univbordeaux.riseofrealms.core.observer.Observer;
 
 public abstract class Person implements Observer {

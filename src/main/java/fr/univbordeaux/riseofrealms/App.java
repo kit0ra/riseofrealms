@@ -2,6 +2,7 @@ package fr.univbordeaux.riseofrealms;
 
 import fr.univbordeaux.riseofrealms.manager.GameManager;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -23,8 +24,15 @@ public class App {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            int choice;
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                scanner.nextLine(); // Clear invalid input
+                continue; // Restart the loop
+            }
 
             switch (choice) {
                 case 1 -> gameManager.displayGrid();
@@ -32,38 +40,47 @@ public class App {
                     System.out.print("Enter resource type: ");
                     String resourceType = scanner.nextLine();
                     System.out.print("Enter amount: ");
-                    int amount = scanner.nextInt();
-                    gameManager.getResourceManager().addResource(resourceType, amount);
-                    System.out.println("Added " + amount + " " + resourceType + " to resources.");
+                    int amount;
+                    try {
+                        amount = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline
+                        gameManager.getResourceManager().addResource(resourceType, amount);
+                        System.out.println("Added " + amount + " " + resourceType + " to resources.");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid amount. Please enter a valid number.");
+                        scanner.nextLine(); // Clear invalid input
+                    }
                 }
                 case 3 -> {
                     System.out.println("Assigning work...");
-                    // Example: Assign work to the first available person
                     gameManager.getPeopleManager().executeBehaviors();
                 }
                 case 4 -> {
                     System.out.println("Building structure...");
-                    // Example: Add a building via BuildingManager
                     System.out.print("Enter building type (e.g., Farm): ");
                     String buildingType = scanner.nextLine();
                     System.out.print("Enter grid coordinates (row col): ");
-                    int row = scanner.nextInt();
-                    int col = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
-
-                    var building = gameManager.getBuildingManager().createBuilding(buildingType);
-                    if (building != null) { // Check if building creation was successful
-                        gameManager.getGridManager().placeBuilding(row, col, building);
-                        System.out.println(buildingType + " has been built at (" + row + ", " + col + ").");
-                    } else {
-                        System.out.println("Failed to create building. Please check the building type.");
+                    try {
+                        int row = scanner.nextInt();
+                        int col = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline
+                        var building = gameManager.getBuildingManager().createBuilding(buildingType);
+                        if (building != null) {
+                            gameManager.getGridManager().placeBuilding(row, col, building);
+                            System.out.println(buildingType + " has been built at (" + row + ", " + col + ").");
+                        } else {
+                            System.out.println("Failed to create building. Please check the building type.");
+                        }
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid coordinates. Please enter valid numbers for row and column.");
+                        scanner.nextLine(); // Clear invalid input
                     }
                 }
                 case 5 -> {
                     System.out.println("Exiting game. Goodbye!");
                     running = false;
                 }
-                default -> System.out.println("Invalid choice. Please try again.");
+                default -> System.out.println("Invalid choice. Please enter a number between 1 and 5.");
             }
         }
 
