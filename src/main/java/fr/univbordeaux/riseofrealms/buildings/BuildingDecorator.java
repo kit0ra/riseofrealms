@@ -4,7 +4,7 @@ public abstract class BuildingDecorator extends Building {
     protected Building decoratedBuilding;
 
     public BuildingDecorator(Building decoratedBuilding) {
-        super(decoratedBuilding.getName(), decoratedBuilding.getSize());
+        super(decoratedBuilding.getName(), decoratedBuilding.getSize(), decoratedBuilding.getImagePath());
         this.decoratedBuilding = decoratedBuilding;
     }
 
